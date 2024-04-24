@@ -1,0 +1,21 @@
+{
+  "name": "tng-n/mini-framework",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "ostenbaken87",
+      "email": "ostenbaken87@mail.ru"
+    }
+  ],
+  "require-dev": {
+    "larapack/dd": "^1.1"
+  },
+  "require": {
+    "codin/dot": "^0.1.2",
+    "ext-pdo": "*"
+  }
+}
