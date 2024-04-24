@@ -2,6 +2,7 @@
 
 namespace App\Application;
 
+use App\Application\Auth\Auth;
 use App\Application\Config\Config;
 use App\Application\Router\Route;
 use App\Application\Router\Router;
@@ -31,6 +32,7 @@ class App
         require_once __DIR__ . '/../../routes/pages.php';
         require_once __DIR__ . '/../../routes/actions.php';
         $router = new Router();
+        Auth::init();
         $router->handle(Route::list());
     }
 }

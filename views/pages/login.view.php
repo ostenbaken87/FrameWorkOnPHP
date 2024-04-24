@@ -1,6 +1,8 @@
 <?php
-use App\Application\Views\View;
+
 use App\Application\Config\Config;
+use App\Application\Views\View;
+
 ?>
 <!doctype html>
 <html lang="<?= Config::get('app.lang') ?>">

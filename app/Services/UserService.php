@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Services;
 
+use App\Application\Auth\Auth;
 use App\Application\Helpers\Random;
 use App\Application\Request\Request;
 use App\Application\Router\Redirect;
 use App\Models\User;
-use App\Application\Auth\Auth;
 
-class UserController
+class UserService
 {
-    public function register(Request $request): void
+    public function register(Request $request)
     {
         $user = new User();
         $user->setEmail($request->post('email'));
@@ -20,7 +20,7 @@ class UserController
         Redirect::to('/login');
     }
 
-    public function login(Request $request): void
+    public function login(Request $request)
     {
         $user = (new User())->find('email',$request->post('email'));
 
@@ -36,12 +36,5 @@ class UserController
         } else {
             Redirect::to('/login');
         }
-    }
-
-    public function logout()
-    {
-        unset($_COOKIE[Auth::getTokenColumn()]);
-        setcookie(Auth::getTokenColumn(),NULL);
-        Redirect::to('/login');
     }
 }
